@@ -105,7 +105,14 @@ class ApiController {
     }
     const titlePropertyName = decorated.titleProperty().name()
 
-    const filters = queryString ? { [titlePropertyName]: queryString } : {}
+    const filters = this.currentAdmin.type == 'admin' ?
+    queryString ? { [titlePropertyName]: queryString } : {}
+    : queryString ? {
+      [titlePropertyName]: queryString,
+      'school': this.currentAdmin._id
+    } : {
+      'school': this.currentAdmin._id
+    };
     const filter = new Filter(filters, resource)
 
     const records = await resource.find(filter, {

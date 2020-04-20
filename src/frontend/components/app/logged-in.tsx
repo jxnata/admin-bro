@@ -18,8 +18,8 @@ const LoggedIn: React.FC<Props> = (props) => {
     <Box flexShrink={0} py="lg">
       <LoggedUser
         email={session.email}
-        title={session.title}
-        avatarUrl={session.avatarUrl}
+        title={session.name}
+        avatarUrl={session.image}
       >
         <DropDownItem>
           <Link href={paths.logoutPath}>{translateButton('logout')}</Link>

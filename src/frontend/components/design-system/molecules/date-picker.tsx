@@ -184,7 +184,14 @@ export const DatePicker: React.FC<DatePickerProps> = (props) => {
         </Button>
         {!hidden ? (
           <DatePickerWrapper>
-            <ReactDatePicker selected={dateValue} onChange={onDatePickerChange} inline {...other} />
+            <ReactDatePicker
+              selected={dateValue}
+              onChange={onDatePickerChange}
+              inline {...other}
+              locale="pt-BR"
+              showYearDropdown
+              dropdownMode="select"
+            />
           </DatePickerWrapper>
         ) : ''}
       </StyledDatePicker>
