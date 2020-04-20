@@ -12,4 +12,4 @@ docker-compose.ovverride.yml
 
 node_modules
 
-src/frontend/assets/scripts
+#src/frontend/assets/scripts
